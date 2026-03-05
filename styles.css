@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #d7d7d7;
+  color: #2f2f2f;
+}
+
+.page-title {
+  width: 980px;
+  margin: 10px auto 6px;
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.app {
+  width: 980px;
+  margin: 0 auto 22px;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.topbar {
+  background: #f6c8e9;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  font-weight: 800;
+  color: #e84d9b;
+  letter-spacing: 1px;
+  font-size: 21px;
+}
+
+.search-circle {
+  background: #fff;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e6a8cf;
+}
+
+.search-circle svg {
+  width: 14px;
+  height: 14px;
+  stroke: #3b3b3b;
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.top-center {
+  margin: 0 auto;
+  display: flex;
+  gap: 12px;
+}
+
+.top-right {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.icon-circle {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  border: 1px solid #d7a2c1;
+  padding: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+}
+
+.icon-circle svg {
+  width: 17px;
+  height: 17px;
+  stroke: #2b2b2b;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.layout {
+  display: flex;
+  min-height: 500px;
+}
+
+.sidebar {
+  width: 230px;
+  background: #e7c1d3;
+  padding: 14px 14px 16px 14px;
+}
+
+.sidebar-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #2b2b2b;
+}
+
+.sidebar-search {
+  background: #fff;
+  border-radius: 18px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  color: #9a9a9a;
+  font-size: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #d5a0bc;
+}
+
+.sidebar-search svg {
+  width: 14px;
+  height: 14px;
+  stroke: #3b3b3b;
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: #d1a0bc;
+  margin: 10px 0 12px;
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  padding-left: 4px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 2px;
+  color: #2f2f2f;
+}
+
+.sidebar-item.active {
+  font-weight: 600;
+}
+
+.item-icon {
+  width: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-icon.dots span {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #2f2f2f;
+  display: inline-block;
+  margin: 0 1px;
+}
+
+.item-icon svg {
+  width: 15px;
+  height: 15px;
+  stroke: #2f2f2f;
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.content {
+  flex: 1;
+  background: #fff;
+  padding: 12px 18px 20px;
+}
+
+.content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #2f2f2f;
+}
+
+.content-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lock svg {
+  width: 14px;
+  height: 14px;
+  stroke: #2f2f2f;
+  stroke-width: 1.6;
+  fill: none;
+}
+
+.settings-btn {
+  border: none;
+  background: #f1b2de;
+  color: #2b2b2b;
+  height: 24px;
+  padding: 0 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 146px;
+  background: #111;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  opacity: 0.92;
+}
+
+.card-label {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: #f06db6;
+  font-size: 12px;
+  font-weight: 700;
+}

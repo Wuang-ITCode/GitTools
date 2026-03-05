@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #d8d8d8;
+  color: #2a2a2a;
+}
+
+.page-title {
+  width: 980px;
+  margin: 18px auto 6px;
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.canvas {
+  width: 980px;
+  height: 520px;
+  margin: 0 auto 24px;
+  background: #e3e3e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 720px;
+  height: 360px;
+  background: #fff;
+  border-radius: 28px;
+  border: 2px solid #1e88ff;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px 28px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background: #f26ab5;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  cursor: default;
+}
+
+.modal-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1f1f1f;
+  margin-top: 6px;
+}
+
+.title-divider {
+  height: 1px;
+  background: #cfcfcf;
+  margin: 12px auto 18px;
+  width: 78%;
+}
+
+.composer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 6px;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80")
+    center/cover no-repeat;
+}
+
+.input-pill {
+  flex: 1;
+  height: 44px;
+  background: #d8d8d8;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  color: #2f2f2f;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.privacy-pill {
+  height: 26px;
+  background: #d6d6d6;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  font-size: 11px;
+  color: #2f2f2f;
+  white-space: nowrap;
+}
+
+.globe-icon {
+  font-size: 12px;
+}
+
+.caret {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  margin: 18px 0 24px;
+}
+
+.action-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.action-icon.emoji {
+  font-size: 22px;
+}
+
+.action-icon.location .pin {
+  width: 14px;
+  height: 20px;
+  background: #ff4d5a;
+  border-radius: 7px 7px 7px 7px;
+  position: relative;
+}
+
+.action-icon.location .pin::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #ff4d5a;
+  transform: translateX(-50%);
+}
+
+.action-icon.tag .tag-body {
+  width: 22px;
+  height: 12px;
+  background: #ffb347;
+  transform: rotate(-20deg);
+  border-radius: 3px;
+}
+
+.action-icon.tag .tag-hole {
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 14px;
+}
+
+.action-icon.image {
+  width: 40px;
+  height: 40px;
+}
+
+.stamp {
+  width: 26px;
+  height: 26px;
+  border: 1px dashed #6eb9ff;
+  border-radius: 4px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 2px;
+}
+
+.stamp-dot {
+  width: 4px;
+  height: 4px;
+  background: #6eb9ff;
+  border-radius: 2px;
+}
+
+.picture {
+  width: 20px;
+  height: 16px;
+  border: 1px solid #6eb9ff;
+  position: absolute;
+  right: 2px;
+  bottom: 4px;
+  border-radius: 2px;
+}
+
+.picture .sun {
+  width: 4px;
+  height: 4px;
+  background: #6eb9ff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+.picture .mount {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 7px solid #6eb9ff;
+  position: absolute;
+  bottom: 2px;
+  left: 3px;
+}
+
+.submit-btn {
+  margin: 0 auto;
+  display: block;
+  width: 220px;
+  height: 36px;
+  border-radius: 18px;
+  border: none;
+  background: #baf7ba;
+  color: #3d7a3d;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
