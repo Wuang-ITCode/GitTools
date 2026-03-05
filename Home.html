@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Social Home - Sơn</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f0f2f5;
+}
+
+/* Navbar */
+
+.navbar{
+    background:#1877f2;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.navbar h2{
+    margin:0;
+}
+
+.navbar input{
+    padding:8px;
+    border-radius:20px;
+    border:none;
+    width:250px;
+}
+
+/* Layout */
+
+.container{
+    display:flex;
+    width:90%;
+    margin:auto;
+    margin-top:20px;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:25%;
+}
+
+.profile{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.profile img{
+    width:80px;
+    border-radius:50%;
+}
+
+.profile h3{
+    margin:10px 0;
+}
+
+/* Feed */
+
+.feed{
+    width:50%;
+    margin:0 20px;
+}
+
+/* Post box */
+
+.post-box{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.post-box input{
+    width:100%;
+    padding:10px;
+    border-radius:20px;
+    border:1px solid #ccc;
+}
+
+/* Post */
+
+.post{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.post-header{
+    display:flex;
+    align-items:center;
+}
+
+.post-header img{
+    width:40px;
+    border-radius:50%;
+    margin-right:10px;
+}
+
+.post img{
+    width:100%;
+    margin-top:10px;
+    border-radius:8px;
+}
+
+/* Right sidebar */
+
+.right{
+    width:25%;
+}
+
+.friend{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+}
+
+.friend p{
+    margin:8px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+<h2>SocialBook</h2>
+<input type="text" placeholder="Tìm kiếm...">
+</div>
+
+
+<div class="container">
+
+<!-- LEFT SIDEBAR -->
+
+<div class="sidebar">
+<div class="profile">
+<img src="https://i.pravatar.cc/100">
+<h3>Sơn</h3>
+<p>Developer | Student</p>
+</div>
+</div>
+
+
+<!-- MAIN FEED -->
+
+<div class="feed">
+
+<div class="post-box">
+<input placeholder="Sơn ơi, bạn đang nghĩ gì?">
+</div>
+
+<div class="post">
+<div class="post-header">
+<img src="https://i.pravatar.cc/40">
+<b>Sơn</b>
+</div>
+
+<p>Hôm nay mình đang học Git và GitHub 🚀</p>
+
+<img src="https://picsum.photos/500/300">
+
+</div>
+
+
+<div class="post">
+<div class="post-header">
+<img src="https://i.pravatar.cc/41">
+<b>Sơn</b>
+</div>
+
+<p>Đang làm bài tập workflow feature branch.</p>
+
+<img src="https://picsum.photos/500/301">
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDEBAR -->
+
+<div class="right">
+
+<div class="friend">
+<h3>Bạn bè</h3>
+<p>Nguyễn Minh</p>
+<p>Trần Long</p>
+<p>Lê Huy</p>
+<p>Phạm Nam</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
