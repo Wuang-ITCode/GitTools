@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUMMY - Kho lưu trữ tin</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-title">Trí - kho lưu trữ tin</div>
+    <div class="app">
+      <header class="topbar">
+        <div class="top-left">
+          <div class="logo">GUMMY</div>
+          <div class="search-circle" aria-label="Tìm kiếm">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6" />
+              <path d="M16 16l4 4" />
+            </svg>
+          </div>
+        </div>
+
+        <nav class="top-center">
+          <button class="icon-circle" aria-label="Trang chủ">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 11.5l8-6 8 6" />
+              <path d="M7 10v9h10v-9" />
+            </svg>
+          </button>
+          <button class="icon-circle" aria-label="Bạn bè">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="8" cy="8" r="3" />
+              <circle cx="16" cy="9" r="3" />
+              <path d="M3 19c0-2.5 3-4 6-4" />
+              <path d="M12 19c0-2.5 3-4 6-4" />
+            </svg>
+          </button>
+          <button class="icon-circle" aria-label="Reels">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="6" width="16" height="12" rx="2" />
+              <path d="M4 9h16" />
+              <path d="M8 6l3 3" />
+              <path d="M13 6l3 3" />
+            </svg>
+          </button>
+          <button class="icon-circle" aria-label="Nhóm">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="9" cy="9" r="3" />
+              <circle cx="16" cy="10" r="2.5" />
+              <path d="M4 19c0-2.8 3-4.5 6-4.5s6 1.7 6 4.5" />
+            </svg>
+          </button>
+          <button class="icon-circle" aria-label="Game">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="5" y="9" width="14" height="6" rx="3" />
+              <path d="M9 10.5v3" />
+              <path d="M7.5 12h3" />
+              <circle cx="16" cy="11.5" r="1" />
+              <circle cx="17.5" cy="13" r="1" />
+            </svg>
+          </button>
+        </nav>
+
+        <nav class="top-right">
+          <button class="icon-circle" aria-label="Tin nhắn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 6h14v9H8l-3 3z" />
+            </svg>
+          </button>
+          <button class="icon-circle" aria-label="Thông báo">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5c-2.5 0-4 2-4 4v4l-2 2h12l-2-2V9c0-2-1.5-4-4-4z" />
+              <path d="M10 18c.5 1 1.2 1.5 2 1.5S13.5 19 14 18" />
+            </svg>
+          </button>
+          <button class="icon-circle" aria-label="Tài khoản">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="9" r="3" />
+              <path d="M5 19c1.5-3 4.5-4.5 7-4.5s5.5 1.5 7 4.5" />
+            </svg>
+          </button>
+        </nav>
+      </header>
+
+      <div class="layout">
+        <aside class="sidebar">
+          <div class="sidebar-title">Kho lưu trữ</div>
+          <div class="sidebar-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6" />
+              <path d="M16 16l4 4" />
+            </svg>
+            <span class="search-placeholder">Tìm Kiếm</span>
+          </div>
+          <div class="sidebar-divider"></div>
+          <div class="sidebar-section">
+            <div class="sidebar-item">
+              <span class="item-icon dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              Nhật kí hoạt động
+            </div>
+            <div class="sidebar-item active">
+              <span class="item-icon folder">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 7h6l2 2h8v8a2 2 0 0 1-2 2H4z" />
+                  <path d="M4 7v10" />
+                </svg>
+              </span>
+              Kho lưu trữ
+            </div>
+            <div class="sidebar-item">
+              <span class="item-icon trash">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 7h14" />
+                  <path d="M9 7V5h6v2" />
+                  <rect x="7" y="7" width="10" height="12" rx="2" />
+                </svg>
+              </span>
+              Thùng rác
+            </div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <div class="content-header">
+            <div class="content-title">
+              <span class="lock">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="5" y="10" width="14" height="10" rx="2" />
+                  <path d="M8 10V8a4 4 0 0 1 8 0v2" />
+                </svg>
+              </span>
+              Chỉ mình bạn xem được kho lưu trữ tin của mìnhhh
+            </div>
+            <button class="settings-btn">
+              <span class="gear">⚙️</span>
+              Cài Đặt
+            </button>
+          </div>
+
+          <section class="grid">
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1468476396571-4d6f2a427ee7?auto=format&fit=crop&w=600&q=80" alt="5 tháng 9" />
+              <div class="card-label">5 tháng 9</div>
+            </article>
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=600&q=80" alt="4 tháng 8" />
+              <div class="card-label">4 tháng 8</div>
+            </article>
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80" alt="2 tháng 7" />
+              <div class="card-label">2 tháng 7</div>
+            </article>
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=600&q=80" alt="2 tháng 6" />
+              <div class="card-label">2 tháng 6</div>
+            </article>
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80" alt="6 tháng 5" />
+              <div class="card-label">6 tháng 5</div>
+            </article>
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="5 tháng 4" />
+              <div class="card-label">5 tháng 4</div>
+            </article>
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=600&q=80" alt="5 tháng 3" />
+              <div class="card-label">5 tháng 3</div>
+            </article>
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1456926631375-92c8ce872def?auto=format&fit=crop&w=600&q=80" alt="5 tháng 2" />
+              <div class="card-label">5 tháng 2</div>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
