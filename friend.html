@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gummy - Bạn bè</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-pink: #ff4d94;
+            --secondary-purple: #9d50bb;
+            --accent-blue: #6e7ff3;
+            --gummy-gradient: linear-gradient(135deg, #c80d58 0%, #9d50bb 100%);
+            --bg-dark: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .gummy-app {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-right: 1px solid var(--glass-border);
+            padding: 2rem;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gummy-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 3rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-muted);
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+        }
+
+        .nav-item.active {
+            border-left: 4px solid var(--primary-pink);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 3rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .search-bar {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            width: 400px;
+            color: white;
+            outline: none;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .tab.active {
+            color: white;
+        }
+
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gummy-gradient);
+            border-radius: 3px;
+        }
+
+        /* Cards */
+        .friends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .friend-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .friend-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 77, 148, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .friend-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--gummy-gradient);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--bg-dark);
+            object-fit: cover;
+        }
+
+        .friend-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .friend-status {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-primary {
+            background: var(--gummy-gradient);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .friend-card {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 80px;
+                padding: 1rem;
+            }
+
+            .sidebar .logo {
+                font-size: 1.2rem;
+            }
+
+            .sidebar .nav-item span {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1.5rem;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="gummy-app">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">Gummy</div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Bảng tin</span>
+                </li>
+                <li class="nav-item active">
+                    <i class="fas fa-user-group"></i>
+                    <span>Bạn bè</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-message"></i>
+                    <span>Tin nhắn</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-bell"></i>
+                    <span>Thông báo</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-gear"></i>
+                    <span>Cài đặt</span>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Bạn bè</h1>
+                <input type="text" class="search-bar" placeholder="Tìm kiếm bạn bè...">
+            </header>
+
+            <nav class="tabs">
+                <div class="tab active">Tất cả</div>
+                <div class="tab">Yêu cầu kết bạn</div>
+                <div class="tab">Gợi ý</div>
+            </nav>
+
+            <section class="friends-section">
+                <div class="friends-grid" id="friendsGrid">
+                    <!-- Cards will be populated here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Mock data for friends
+        const friends = [
+            { name: 'Khánh Linh', status: '20 bạn chung', img: 'https://i.pravatar.cc/150?u=linh' },
+            { name: 'Minh Quân', status: '5 bạn chung', img: 'https://i.pravatar.cc/150?u=quan' },
+            { name: 'Thu Hà', status: '12 bạn chung', img: 'https://i.pravatar.cc/150?u=ha' },
+            { name: 'Đức Anh', status: '8 bạn chung', img: 'https://i.pravatar.cc/150?u=anh' },
+            { name: 'Hoàng Long', status: '15 bạn chung', img: 'https://i.pravatar.cc/150?u=long' },
+            { name: 'Thanh Trúc', status: '3 bạn chung', img: 'https://i.pravatar.cc/150?u=truc' }
+        ];
+
+        const grid = document.getElementById('friendsGrid');
+        const searchInput = document.querySelector('.search-bar');
+        const tabs = document.querySelectorAll('.tab');
+
+        function renderFriends(data) {
+            grid.innerHTML = '';
+            data.forEach((friend, index) => {
+                const card = document.createElement('div');
+                card.className = 'friend-card';
+                card.style.animationDelay = `${index * 0.05}s`;
+                card.innerHTML = `
+                    <img src="${friend.img}" alt="${friend.name}" class="profile-img">
+                    <h2 class="friend-name">${friend.name}</h2>
+                    <p class="friend-status">${friend.status}</p>
+                    <div class="card-actions">
+                        <button class="btn btn-primary">Nhắn tin</button>
+                        <button class="btn btn-secondary">Trang cá nhân</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Initial render
+        renderFriends(friends);
+
+        // Search functionality
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = friends.filter(f => f.name.toLowerCase().includes(term));
+            renderFriends(filtered);
+        });
+
+        // Tab switching
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Shuffle for demo effect when switching tabs
+                const shuffled = [...friends].sort(() => 0.5 - Math.random());
+                renderFriends(shuffled);
+            });
+        });
+    </script>
+</body>
+
+</html>
